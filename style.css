@@ -193,6 +193,15 @@ nav a:hover {
     text-decoration: none;
 }
 
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00a2ff;
+    margin-bottom: 15px;
+    background-color: #1a1d2e;
+}
+
 /* Footer */
 footer {
     text-align: center;
