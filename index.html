@@ -82,17 +82,18 @@
     </section>
 
     <script>
-        const userId = "9338639624";
-        const avatarImg = document.getElementById("roblox-avatar");
+    const userId = "9338639624";
+    const avatarImg = document.getElementById("roblox-avatar");
 
-        fetch(`https://corsproxy.io/?https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=150x150&format=Png&isCircular=true`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.data && data.data[0].imageUrl) {
-                    avatarImg.src = data.data[0].imageUrl;
-                }
-            })
-            .catch(error => console.error("Error loading Roblox avatar:", error));
+    // Fetches the full-body thumbnail (which includes your active profile emote/pose)
+    fetch(`https://corsproxy.io/?https://thumbnails.roblox.com/v1/users/avatar?userIds=${userId}&size=352x352&format=Png&isCircular=false`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.data && data.data[0].imageUrl) {
+                avatarImg.src = data.data[0].imageUrl;
+            }
+        })
+        .catch(error => console.error("Error loading Roblox avatar:", error));
     </script>
 
 </body>
