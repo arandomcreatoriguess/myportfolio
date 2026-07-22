@@ -19,6 +19,8 @@
     </header>
 
     <section class="hero">
+        <img id="roblox-avatar" class="avatar-img" src="" alt="Must4rd Avatar">
+        
         <h1>Hi, I'm <span class="highlight">Must4rd</span></h1>
         <p>Roblox Scripter & Graphics designer with 2 years of experience creating immersive experiences.</p>
         <a href="#portfolio" class="cta-btn">View My Work</a>
@@ -78,6 +80,20 @@
             <p><strong>Roblox Profile:</strong> <a href="https://www.roblox.com/users/9338639624/profile" target="_blank">@redmustard_6</a></p>
         </div>
     </section>
+
+    <script>
+        const userId = "9338639624";
+        const avatarImg = document.getElementById("roblox-avatar");
+
+        fetch(`https://corsproxy.io/?https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=150x150&format=Png&isCircular=true`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.data && data.data[0].imageUrl) {
+                    avatarImg.src = data.data[0].imageUrl;
+                }
+            })
+            .catch(error => console.error("Error loading Roblox avatar:", error));
+    </script>
 
 </body>
 </html>
