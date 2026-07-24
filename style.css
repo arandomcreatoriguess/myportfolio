@@ -11,22 +11,26 @@
 :root {
     --primary-color: #FFD700;
     --primary-dark: #FFC700;
-    --secondary-color: #1a1a2e;
+    --secondary-color: #0a0e27;
     --text-dark: #0f0f1e;
     --text-light: #e0e0e0;
+    --text-lighter: #b0b0c0;
     --accent-color: #FF6B6B;
     --accent-blue: #00D9FF;
+    --bg-dark: #0f1426;
+    --bg-darker: #0a0e27;
+    --bg-card: #1a2340;
     --border-radius: 12px;
     --transition: all 0.3s ease;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
-    color: var(--text-dark);
+    background: linear-gradient(135deg, #0a0e27 0%, #0f1426 50%, #1a0f2e 100%);
+    color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -46,9 +50,10 @@ html {
    ==================== */
 
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 14, 39, 0.85);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -94,7 +99,7 @@ html {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-light);
     font-weight: 500;
     position: relative;
     transition: var(--transition);
@@ -144,7 +149,7 @@ html {
    ==================== */
 
 .hero {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 107, 107, 0.08));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 107, 107, 0.03));
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -161,7 +166,7 @@ html {
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent);
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.08), transparent);
     border-radius: 50%;
     animation: float 8s ease-in-out infinite;
     filter: blur(40px);
@@ -174,7 +179,7 @@ html {
     left: -10%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(255, 107, 107, 0.1), transparent);
+    background: radial-gradient(circle, rgba(255, 107, 107, 0.05), transparent);
     border-radius: 50%;
     animation: float 10s ease-in-out infinite reverse;
     filter: blur(40px);
@@ -214,7 +219,7 @@ html {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.2;
-    color: var(--text-dark);
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
 }
@@ -228,7 +233,7 @@ html {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: #555;
+    color: var(--text-lighter);
     margin-bottom: 2.5rem;
     line-height: 1.8;
     font-weight: 400;
@@ -265,16 +270,16 @@ html {
 
 .cta-secondary {
     background: transparent;
-    color: var(--text-dark);
-    border: 2px solid var(--text-dark);
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
     font-weight: 600;
 }
 
 .cta-secondary:hover {
-    background: var(--text-dark);
-    color: white;
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
 }
 
 .hero-avatar {
@@ -297,7 +302,7 @@ html {
     width: 100%;
     max-width: 400px;
     border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(255, 215, 0, 0.25);
+    box-shadow: 0 30px 80px rgba(255, 215, 0, 0.2);
     position: relative;
     z-index: 2;
     border: 3px solid rgba(255, 215, 0, 0.2);
@@ -310,7 +315,7 @@ html {
     transform: translate(-50%, -50%);
     width: 115%;
     height: 115%;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.4), transparent);
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent);
     border-radius: 50%;
     filter: blur(50px);
     animation: glow 4s ease-in-out infinite;
@@ -327,7 +332,7 @@ html {
    ==================== */
 
 .about-section {
-    background: white;
+    background: var(--bg-darker);
     padding: 7rem 20px;
 }
 
@@ -336,7 +341,7 @@ html {
     font-weight: 800;
     text-align: center;
     margin-bottom: 3.5rem;
-    color: var(--text-dark);
+    color: var(--text-light);
     position: relative;
     display: inline-block;
     width: 100%;
@@ -362,7 +367,7 @@ html {
 
 .about-text {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-lighter);
     margin-bottom: 1.8rem;
     line-height: 1.9;
 }
@@ -378,7 +383,7 @@ html {
     gap: 2.5rem;
     margin-top: 4rem;
     padding-top: 2.5rem;
-    border-top: 2px solid #eee;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .stat {
@@ -402,7 +407,7 @@ html {
 }
 
 .stat p {
-    color: #888;
+    color: var(--text-lighter);
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -413,7 +418,7 @@ html {
    ==================== */
 
 .portfolio-section {
-    background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #0f1426 0%, #1a1f3a 100%);
     padding: 7rem 20px;
 }
 
@@ -426,20 +431,20 @@ html {
 }
 
 .project-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .project-card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 25px 70px rgba(255, 215, 0, 0.25);
-    border-color: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 25px 70px rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.25);
 }
 
 .project-image {
@@ -507,12 +512,12 @@ html {
 .project-info h3 {
     font-size: 1.6rem;
     margin-bottom: 0.8rem;
-    color: var(--text-dark);
+    color: var(--text-light);
     font-weight: 700;
 }
 
 .project-info p {
-    color: #666;
+    color: var(--text-lighter);
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
     flex-grow: 1;
@@ -527,18 +532,18 @@ html {
 }
 
 .tag {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 107, 107, 0.15));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 107, 0.08));
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 25px;
     font-size: 0.8rem;
     font-weight: 600;
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     transition: var(--transition);
 }
 
 .tag:hover {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 107, 107, 0.25));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 107, 0.15));
     border-color: var(--primary-color);
 }
 
@@ -548,9 +553,9 @@ html {
     align-items: center;
     justify-content: center;
     height: 250px;
-    background: linear-gradient(135deg, #f5f5f5, #efefef);
+    background: linear-gradient(135deg, #1a2340, #152850);
     gap: 1rem;
-    color: #999;
+    color: #666;
 }
 
 .project-placeholder span {
@@ -566,7 +571,7 @@ html {
    ==================== */
 
 .skills-section {
-    background: white;
+    background: var(--bg-darker);
     padding: 7rem 20px;
 }
 
@@ -596,7 +601,7 @@ html {
 .category-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-light);
     margin-bottom: 1.8rem;
     display: flex;
     align-items: center;
@@ -611,18 +616,18 @@ html {
 }
 
 .skill-item {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 107, 107, 0.08));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 107, 107, 0.03));
     padding: 1.6rem 1.2rem;
     border-radius: 16px;
     text-align: center;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid rgba(255, 215, 0, 0.1);
 }
 
 .skill-item:hover {
     border-color: var(--primary-color);
     transform: translateY(-8px);
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 107, 107, 0.15));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 107, 107, 0.08));
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
 }
 
@@ -635,7 +640,7 @@ html {
 .skill-item span {
     display: block;
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--text-light);
     font-size: 0.95rem;
 }
 
@@ -644,11 +649,13 @@ html {
    ==================== */
 
 .contact-section {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #2a2a4e 100%);
+    background: linear-gradient(135deg, #0a0e27 0%, #0f1426 100%);
     padding: 7rem 20px;
-    color: white;
+    color: var(--text-light);
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .contact-section::before {
@@ -676,7 +683,7 @@ html {
 }
 
 .contact-section .section-title {
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
@@ -688,7 +695,7 @@ html {
 .contact-subtitle {
     text-align: center;
     font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-lighter);
     margin-bottom: 3.5rem;
     max-width: 600px;
     margin-left: auto;
@@ -708,19 +715,19 @@ html {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, rgba(26, 35, 64, 0.6), rgba(21, 40, 80, 0.4));
     backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: 16px;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: var(--text-light);
     border: 2px solid rgba(255, 215, 0, 0.15);
     transition: var(--transition);
 }
 
 .contact-card:hover {
-    background: rgba(255, 215, 0, 0.12);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 107, 0.05));
     border-color: var(--primary-color);
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
@@ -739,7 +746,7 @@ html {
 }
 
 .contact-card p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-lighter);
     font-weight: 500;
 }
 
@@ -748,17 +755,17 @@ html {
    ==================== */
 
 .footer {
-    background: var(--secondary-color);
-    color: white;
+    background: #060a1a;
+    color: var(--text-light);
     text-align: center;
     padding: 2.5rem 20px;
-    border-top: 2px solid rgba(255, 215, 0, 0.1);
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .footer p {
     margin: 0.6rem 0;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-lighter);
 }
 
 /* ==================== 
